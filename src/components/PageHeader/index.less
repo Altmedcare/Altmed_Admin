@@ -1,0 +1,203 @@
+@import "~antd/lib/style/themes/default.less";
+
+.pageHeader {
+  padding: 24px;
+  margin: 24px 24px 24px;
+  border-radius: 8px;
+  min-height: 250px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: white;
+  background-image: url(http://api-lunacy.icons8.com/api/assets/39888352-b9d2-4d76-8d3d-cf61d930b6c6/bg-avant.svg);
+  position: relative;
+  
+  .wide {
+    max-width: 1200px;
+    margin: auto;
+  }
+  .TitleBG {
+    margin: auto;
+    display: block;
+ 
+   
+    img {
+      width: 60%;
+      height: auto;
+      margin: 0;
+      display: none;
+      opacity: 0.3;
+      text-align: right;
+      float: right;
+      -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+      filter: grayscale(100%)
+    }
+  }
+  .detail {
+    display: flex;
+  }
+
+  .row {
+    display: flex;
+    width: 100%;
+  }
+
+  .breadcrumb {
+    margin-bottom: 16px;
+  }
+
+  .tabs {
+    margin: 0 0 0 -8px;
+
+    :global {
+      // 1px 可以让选中效果显示完成
+      .ant-tabs-bar {
+        margin-bottom: 1px;
+        border-bottom: none;
+      }
+    }
+  }
+
+  .logo {
+    flex: 0 1 auto;
+    margin-right: 16px;
+    padding-top: 1px;
+    > img {
+      display: block;
+      width: 28px;
+      height: 28px;
+      border-radius: @border-radius-base;
+    }
+  }
+
+  .title {
+    color: #222222;
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: capitalize;
+    position: relative;
+    &:after {
+      content: "";
+      display: block;
+      width: 40px;
+      height: 4px;
+      background: #ffffff3b;
+      position: absolute;
+      bottom: -14px;
+      border-radius: 4px;
+    }
+  }
+
+  .action {
+    min-width: 266px;
+    margin-left: 56px;
+
+    :global {
+      .ant-btn-group:not(:last-child),
+      .ant-btn:not(:last-child) {
+        margin-right: 8px;
+      }
+
+      .ant-btn-group > .ant-btn {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .title,
+  .content {
+    flex: auto;
+    color: #222222;
+  }
+  .content {
+    margin-top: 24px;
+  }
+  .action,
+  .extraContent,
+  .main {
+    flex: 0 1 auto;
+  }
+
+  .main {
+    width: 100%;
+  }
+
+  .title,
+  .action {
+    margin-bottom: 16px;
+  }
+
+  .logo,
+  .content,
+  .extraContent {
+    margin-bottom: 16px;
+  }
+
+  .action,
+  .extraContent {
+    text-align: right;
+  }
+
+  .extraContent {
+    min-width: 242px;
+    margin-left: 88px;
+  }
+}
+
+@media screen and (max-width: @screen-xl) {
+  .pageHeader {
+    .extraContent {
+      margin-left: 44px;
+    }
+  }
+}
+
+@media screen and (max-width: @screen-lg) {
+  .pageHeader {
+    .extraContent {
+      margin-left: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: @screen-md) {
+  .pageHeader {
+    min-height: 330px;
+    .row {
+      display: block;
+    }
+
+    .action,
+    .extraContent {
+      margin-left: 0;
+      text-align: left;
+    }
+  }
+}
+
+@media screen and (max-width: @screen-sm) {
+  .pageHeader {
+    min-height: 330px;
+    .detail {
+      display: block;
+    }
+  }
+}
+
+@media screen and (max-width: @screen-xs) {
+  .pageHeader {
+    min-height: 330px;
+    .action {
+      :global {
+        .ant-btn-group,
+        .ant-btn {
+          display: block;
+          margin-bottom: 8px;
+        }
+        .ant-btn-group > .ant-btn {
+          display: inline-block;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

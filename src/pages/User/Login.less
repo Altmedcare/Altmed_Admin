@@ -1,0 +1,50 @@
+@import '~antd/lib/style/themes/default.less';
+
+.main {
+  width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 0;
+  border-radius: 6px;
+  @media screen and (max-width: @screen-sm) {
+    width: 95%;
+  }
+
+  .icon {
+    margin-left: 16px;
+    color: rgba(0, 0, 0, 0.2);
+    font-size: 24px;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: color 0.3s;
+
+    &:hover {
+      color: @primary-color;
+    }
+  }
+
+  .other {
+    margin-top: 24px;
+    line-height: 22px;
+    text-align: center;
+
+    .register {
+      margin-top: 24px;
+      display: block;
+      text-align: center;
+      color: #444;
+    }
+  }
+}
+:global{
+  .ant-divider-horizontal.ant-divider-with-text{
+    display: table;
+    margin: 24px 0;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 500;
+    font-size: 12px;
+    white-space: nowrap;
+    text-align: center;
+    background: transparent;
+  }
+}

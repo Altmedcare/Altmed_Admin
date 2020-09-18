@@ -1,0 +1,189 @@
+@import '~antd/lib/style/themes/default.less';
+
+.card {
+    margin-bottom: 24px !important;
+    display: block !important;
+
+}
+.ant-carousel .slick-slide {
+    text-align: center;
+    height: 160px;
+    line-height: 160px;
+    background: #364d79;
+    overflow: hidden;
+    h3{
+        color: #fff;
+    }
+  }
+  
+:global{
+    .iconColorAntd{
+        background: red;
+    }
+    .componentsButtonDemo{
+      
+        .ant-btn, .aws-btn{
+            margin-right: 12px;
+            margin-bottom: 12px;
+        }
+        
+        .ant-btn-group {
+            margin-right: 12px;
+            margin-bottom: 12px;
+            button{
+                margin-right: 0!important;
+            }
+        }
+        .ant-alert{
+            margin-bottom: 24px;
+        }
+    } 
+    .aws-btn {
+
+        --button-default-height: 48px;
+        --button-default-font-size: 13px;
+        --button-default-border-radius: 25px!important;
+        --button-horizontal-padding: 26px;
+        --button-raise-level: 5px;
+        --button-hover-pressure: 1.5;
+        --transform-speed: 0.15s;
+        --button-primary-color: #1e88e5;
+        --button-primary-color-dark: #1360a4;
+        --button-primary-color-light: #ffffff;
+        --button-primary-color-hover: #187bd1;
+        --button-primary-border: 0px solid #FFFFFF;
+        --button-secondary-color: #f2f6f9;
+        --button-secondary-color-dark: #1360a4;
+        --button-secondary-color-light: #1e88e5;
+        --button-secondary-color-hover: #e1eaf1;
+        --button-secondary-border: 2px solid #1e88e5;
+        --button-anchor-color: #0e4f88;
+        --button-anchor-color-dark: #072743;
+        --button-anchor-color-light: #ffffff;
+        --button-anchor-color-hover: #0d4a7f;
+        --button-anchor-border: none;
+        }
+        .ant-alert-info{
+            background-color: lighten(#1561ae,40%)!important;
+            color: darken(#1561ae,5%)!important;
+            border: 1px solid lighten(#1561ae,35%)!important;
+        }
+        .ant-alert-success{
+            background-color: lighten(#36b37e,40%)!important;
+            color: darken(#36b37e,5%)!important;
+            border: 1px solid lighten(#36b37e,35%)!important;
+           
+        }
+        .ant-alert-warning{
+            background-color: lighten(#ffab00,40%)!important;
+            border: 1px solid lighten(#ffab00,35%)!important;
+            color: darken(#ffab00,5%)!important;
+        }
+        .ant-alert-error{
+            background-color: lighten(#d93026,40%)!important;
+            border: 1px solid lighten(#d93026,35%)!important;
+            color:darken(#d93026,5%)!important;
+        }
+        .ant-alert-with-description .ant-alert-message{
+            color:inherit!important;
+            font-weight: 700!important;
+        }
+
+}
+
+.gutter-row {
+    margin-bottom: 24px !important;
+    display: block !important;
+}
+
+
+.heading {
+    margin: 0 0 16px 0;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.steps:global(.ant-steps) {
+    max-width: 750px;
+    margin: 16px auto;
+}
+
+.errorIcon {
+    margin-right: 24px;
+    color: @error-color;
+    cursor: pointer;
+
+    i {
+        margin-right: 4px;
+    }
+}
+
+.errorPopover {
+    :global {
+        .ant-popover-inner-content {
+            min-width: 256px;
+            max-height: 290px;
+            padding: 0;
+            overflow: auto;
+        }
+    }
+}
+
+.errorListItem {
+    padding: 8px 16px;
+    list-style: none;
+    border-bottom: 1px solid @border-color-split;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+        background: @primary-1;
+    }
+
+    &:last-child {
+        border: 0;
+    }
+
+    .errorIcon {
+        float: left;
+        margin-top: 4px;
+        margin-right: 12px;
+        padding-bottom: 22px;
+        color: @error-color;
+    }
+
+    .errorField {
+        margin-top: 2px;
+        color: @text-color-secondary;
+        font-size: 12px;
+    }
+}
+
+.editable {
+    td {
+        padding-top: 13px !important;
+        padding-bottom: 12.5px !important;
+    }
+}
+
+// custom footer for fixed footer toolbar
+.advancedForm+div {
+    padding-bottom: 64px;
+}
+
+.advancedForm {
+    :global {
+        .ant-form .ant-row:last-child .ant-form-item {
+            margin-bottom: 24px;
+        }
+
+        .ant-table td {
+            transition: none !important;
+        }
+    }
+}
+
+.optional {
+    color: @text-color-secondary;
+    font-style: normal;
+}

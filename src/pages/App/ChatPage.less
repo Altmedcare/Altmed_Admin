@@ -1,0 +1,281 @@
+@import "~@/utils/utils.less";
+@import "~antd/lib/style/themes/default.less";
+// Color variables (appears count calculates by raw css)
+@color0: #4e8cff; // Appears 4 times
+@color1: #516996; // Appears 3 times
+.darkCard {
+  background: #fafafa42 !important;
+  color: white;
+
+  div,
+  h4,
+  span,
+  p,
+  em {
+    color: white !important;
+    border: 0;
+  }
+
+  .ant-card-head {
+    color: white !important;
+    border-bottom: none !important;
+
+    .ant-card-head-title {
+      color: white !important;
+    }
+  }
+}
+
+.demo-test-area--wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.demo-test-area--title {
+  align-self: center;
+  text-align: center;
+}
+.demo-test-area--title-main {
+  color: @color1;
+  font-size: 28px;
+  font-weight: 600;
+}
+.demo-test-area--title-sub {
+  color: @color0;
+  padding-top: 10px;
+  a {
+    color: @color0;
+    font-weight: 400;
+    text-decoration: none;
+  }
+}
+.demo-test-area {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  width: 400px;
+}
+.demo-test-area--preamble {
+  color: @color1;
+  padding: 20px 0px;
+}
+.demo-test-area--button {
+  align-self: center;
+  background: @color0;
+  border-radius: 4px;
+  border: none;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  font-family: Avenir Next, Helvetica Neue, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  height: 50px;
+  line-height: 1.4;
+  margin-top: 20px;
+  outline: none;
+  padding: 6px 10px;
+  text-decoration: none;
+  user-select: none;
+  width: 80%;
+  &:hover {
+    background: #4883f1;
+  }
+}
+.demo-test-area--info {
+  color: @color1;
+  font-weight: 200;
+  margin-top: 40px;
+  margin: auto;
+  width: 550px;
+  a {
+    color: @color0;
+    font-weight: 400;
+    text-decoration: none;
+  }
+}
+.cardList {
+  margin-bottom: -24px;
+
+  .card {
+    :global {
+      .ant-card-meta-title {
+        margin-bottom: 12px;
+        & > a {
+          display: inline-block;
+          max-width: 100%;
+          color: @heading-color;
+        }
+      }
+      .ant-card-actions {
+        background: #f7f9fa;
+      }
+      .ant-card-body:hover {
+        .ant-card-meta-title > a {
+          color: @primary-color;
+        }
+      }
+    }
+  }
+  .item {
+    height: 64px;
+  }
+
+  :global {
+    .ant-list .ant-list-item-content-single {
+      max-width: 100%;
+    }
+  }
+}
+:global{
+  .ant-card-extra{
+    a{
+      i{
+        font-size: 14px!important;
+    margin-left: 13px;
+    color: #516996;
+      }
+    }
+  }
+  .rce-mbox-time{
+    right: 0!important;
+    bottom: -10px!important;
+  }
+
+}
+@media only screen and (max-width: @screen-md) {
+  :global{
+    .demo-test-area--text{
+      width: 90%;
+    }
+    .demo-test-area--button {
+     display: none;
+    }
+  }
+}
+.extraImg {
+  width: 195px;
+  margin-top: -60px;
+  text-align: center;
+  position: relative;
+  top: 12px;
+  i {
+    font-size: 7em;
+    text-align: center;
+    opacity: 0.8;
+    position: absolute;
+    top: -5px;
+    right: 0;
+    background: #1111111f;
+    border-radius: 50%;
+    padding: 10px;
+  }
+  img {
+    width: 100%;
+  }
+}
+.email-list {
+  .ant-list-item-meta-description {
+    background: red;
+  }
+}
+//kanban
+:global {
+  .smooth-dnd-draggable-wrapper {
+    a {
+      color: #000000 !important;
+    }
+    &:nth-child(1) {
+      .react-trello-lane {
+        border-top: 6px solid #0052cc !important;
+        header {
+          span {
+            color: #0052cc !important;
+          }
+        }
+      }
+    }
+    &:nth-child(2) {
+      .react-trello-lane {
+        border-top: 6px solid #172b4d !important;
+        header {
+          span {
+            color: #172b4d !important;
+          }
+        }
+      }
+    }
+    &:nth-child(3) {
+      .react-trello-lane {
+        border-top: 6px solid #00b8d9 !important;
+        header {
+          span {
+            color: #00b8d9 !important;
+          }
+        }
+      }
+    }
+    &:nth-child(4) {
+      .react-trello-lane {
+        border-top: 6px solid #6554c0 !important;
+        header {
+          span {
+            color: #6554c0 !important;
+          }
+        }
+      }
+    }
+    &:nth-child(5) {
+      .react-trello-lane {
+        border-top: 6px solid #36b37e !important;
+        header {
+          span {
+            color: #36b37e !important;
+          }
+        }
+      }
+    }
+    &:nth-child(6) {
+      .react-trello-lane {
+        border-top: 6px solid #ffab00 !important;
+        header {
+          span {
+            color: #ffab00 !important;
+          }
+        }
+      }
+    }
+    &:nth-child(n + 7) {
+      .react-trello-lane {
+        border-top: 6px solid #403294 !important;
+        header {
+          span {
+            color: #403294 !important;
+          }
+        }
+      }
+    }
+  }
+}
+:global {
+  //chat
+  .sc-chat-window {
+    font-family: inherit !important;
+  }
+
+  .rce-citem-body--bottom-title,
+  .rce-citem-body--top-title {
+    font-size: 14px !important;
+  }
+
+  .rce-citem-body--top-title {
+    font-weight: 500 !important;
+    color: #333 !important;
+  }
+
+  .ant-tooltip-inner {
+    color: #333 !important;
+    background: #ffffff !important;
+  }
+}

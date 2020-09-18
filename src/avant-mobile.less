@@ -1,0 +1,326 @@
+@import "~antd/lib/style/themes/default.less";
+@import "avant-theme.less";
+
+@avant-grey: #f3f5f8 !important;
+@avant-text-grey: #979da7;
+@responsive-table-threshold-width: 800px;
+@responsive-table-white-space: normal;
+
+@responsive-table-left-heading-width: 0;
+@responsive-table-left-heading-font-weight: bold;
+@responsive-table-left-heading-top-padding: 6px;
+@responsive-table-left-heading-bottom-padding: 6px;
+
+@responsive-table-cell-border-color: #fff;
+@responsive-table-cell-border-style: solid;
+@responsive-table-cell-border-width: 1px;
+
+@responsive-table-row-border-color: #ccc;
+@responsive-table-row-border-style: solid;
+@responsive-table-row-border-width: 0;
+
+@responsive-table-data-alignment: left;
+
+@responsive-table-left-heading-adjuster: 10;
+
+table {
+  margin: auto !important;
+}
+
+//mobile vertical
+@media only screen and (max-width: @screen-md) {
+  .antd-pro-components-global-header-index-header{
+    margin: 12px!important;
+    height: 66px!important;
+  }
+  table {
+    thead {
+      /* Hide table headers (but not display: none;, for accessibility) */
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+    tbody {
+      tr {
+        display: block;
+        border: @responsive-table-row-border-width
+          @responsive-table-row-border-style @responsive-table-row-border-color;
+        td {
+          display: block;
+          /* Behave  like a "row" */
+          border: none;
+          border-bottom: @responsive-table-cell-border-width
+            @responsive-table-cell-border-style
+            @responsive-table-cell-border-color;
+          position: relative;
+          padding-left: @responsive-table-left-heading-width !important;
+          white-space: @responsive-table-white-space;
+          text-align: @responsive-table-data-alignment;
+
+          &:before {
+            /* Now like a table header */
+            position: absolute;
+            /* Top/left values mimic padding */
+            top: @responsive-table-left-heading-top-padding;
+            left: @responsive-table-left-heading-bottom-padding;
+            white-space: @responsive-table-white-space;
+            font-weight: @responsive-table-left-heading-font-weight;
+            content: attr(data-title); // Label the data
+          }
+        }
+      }
+    }
+  }
+  .wider-headings {
+    tbody {
+      tr {
+        td {
+          padding-left: @responsive-table-left-heading-width +
+            @responsive-table-left-heading-adjuster !important;
+        }
+      }
+    }
+  }
+  .ant-card {
+    margin-bottom: 15px !important;
+  }
+
+  .ant-drawer-content-wrapper {
+    width: 270px !important;
+  }
+
+  .ant-drawer.ant-drawer-left.ant-drawer-open {
+    aside {
+      left: 0 !important;
+    }
+  }
+
+  .antd-pro-components-global-header-index-trigger {
+    top: -24px !important;
+    float: right !important;
+    left: 10px !important;
+  }
+
+  .antd-pro-components-global-header-index-logo,
+  .ant-breadcrumb {
+    display: none !important;
+  }
+
+  .ant-layout-sider-children {
+    position: relative;
+
+    .fixed-sidebar {
+      width: 40px !important;
+
+      &:before {
+        content: "";
+        width: 40px !important;
+      }
+
+      .logo {
+        .ant-avatar-square {
+          width: 25px !important;
+          height: 25px !important;
+        }
+      }
+    }
+
+    .ant-menu.ant-menu-light.ant-menu-root.ant-menu-inline {
+      // padding: 0px 15px 0px 55px;
+    }
+
+    .antd-pro-components-sider-menu-index-logo {
+      padding-left: 70px !important;
+
+      a {
+        h1 {
+          padding: 0 0 0 5px;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+  .antd-pro-pages-app-chat-page-extraImg {
+    display: none;
+  }
+}
+
+// mobile landscape
+@media only screen and (max-width: @screen-lg) {
+  .antd-pro-components-global-header-index-header{
+    margin: 12px!important;
+    height: 66px!important;
+  }
+  .ant-card {
+    margin-bottom: 15px !important;
+  }
+
+  .ant-layout .ant-card {
+    margin-bottom: 25px !important;
+  }
+
+  .ant-drawer-content-wrapper {
+    width: 270px !important;
+  }
+
+  .ant-layout-sider-children ul {
+    ul {
+      margin-left: 0 !important;
+    }
+  }
+
+  .ant-drawer.ant-drawer-left.ant-drawer-open {
+    aside {
+      left: 0 !important;
+    }
+  }
+
+  .antd-pro-components-global-header-index-trigger {
+    top: -24px !important;
+    float: right !important;
+    left: 10px !important;
+  }
+
+  .antd-pro-components-global-header-index-logo,
+  .ant-breadcrumb {
+    display: none !important;
+  }
+
+  .ant-layout-sider-children {
+    position: relative;
+
+    .fixed-sidebar {
+      width: 40px !important;
+
+      &:before {
+        content: "";
+        width: 40px !important;
+      }
+
+      .logo {
+        .ant-avatar-square {
+          width: 25px !important;
+          height: 25px !important;
+        }
+      }
+    }
+
+    .ant-layout-sider-collapsed .antd-pro-components-sider-menu-index-logo img {
+      margin-left: -15px !important;
+    }
+
+    .ant-menu.ant-menu-light.ant-menu-root.ant-menu-inline {
+      width: 250px !important;
+    }
+
+    .antd-pro-components-sider-menu-index-logo {
+      padding-left: 12px !important;
+      margin: 0;
+
+      a {
+        img {
+          position: relative;
+          left: 0;
+        }
+
+        h1 {
+          padding: 0 0 0 18px;
+          font-size: inherit;
+        }
+      }
+    }
+  }
+  .antd-pro-pages-app-chat-page-extraImg {
+    display: none;
+  }
+}
+
+/* Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
+  .antd-pro-components-global-header-index-header{
+    margin: 12px!important;
+    height: 66px!important;
+  }
+  .ant-card {
+    margin-bottom: 15px !important;
+  }
+
+  .ant-layout .ant-card {
+    margin-bottom: 25px !important;
+  }
+
+  .ant-drawer-content-wrapper {
+    width: 270px !important;
+  }
+
+  .ant-layout-sider-children ul {
+    ul {
+      margin-left: 0 !important;
+    }
+  }
+
+  .ant-drawer.ant-drawer-left.ant-drawer-open {
+    aside {
+      left: 0 !important;
+    }
+  }
+
+  .antd-pro-components-global-header-index-trigger {
+    top: -24px !important;
+    float: right !important;
+    left: 10px !important;
+  }
+
+  .antd-pro-components-global-header-index-logo,
+  .ant-breadcrumb {
+    display: none !important;
+  }
+
+  .ant-layout-sider-children {
+    position: relative;
+
+    .fixed-sidebar {
+      width: 40px !important;
+
+      &:before {
+        content: "";
+        width: 40px !important;
+      }
+
+      .logo {
+        .ant-avatar-square {
+          width: 25px !important;
+          height: 25px !important;
+        }
+      }
+    }
+
+    .ant-layout-sider-collapsed .antd-pro-components-sider-menu-index-logo img {
+      margin-left: -15px !important;
+    }
+
+    .ant-menu.ant-menu-light.ant-menu-root.ant-menu-inline {
+      padding: 0;
+    }
+
+    .antd-pro-components-sider-menu-index-logo {
+      padding-left: 12px !important;
+      margin: 0;
+
+      a {
+        img {
+          position: relative;
+          left: 0;
+        }
+
+        h1 {
+          padding: 0 0 0 18px;
+          font-size: inherit;
+        }
+      }
+    }
+  }
+  .antd-pro-pages-app-chat-page-extraImg {
+    display: none;
+  }
+}
