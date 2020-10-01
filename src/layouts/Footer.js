@@ -33,7 +33,7 @@ const FooterView = () => (
       }
       copyright={
         <Fragment>
-        Made it with  <Icon type="heart" theme="filled" color="#eb2f96"/> by <a href="https://themeforest.net/user/themesmile"><strong>Themesmile</strong></a> 2019
+        Made it with  <Icon type="heart" theme="filled" color="#eb2f96"/> by <a href="https://themeforest.net/user/themesmile"><strong>AltMed</strong></a> 2019
       </Fragment>
       }
     />

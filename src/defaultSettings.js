@@ -1,15 +1,18 @@
 module.exports = {
-  navTheme: 'dark', 
-  primaryColor: '#3053A9', // primary color of ant design
+  // navTheme: 'dark',
+  navTheme: 'light',
+  // primaryColor: '#3053A9', // primary color of ant design
+  primaryColor: '#18a959', // primary color of ant design
   layout: 'sidemenu', // sidemenu
-  contentWidth: 'Fluid', // 
+  contentWidth: 'Fluid', //
   fixedHeader: true, // sticky header
   autoHideHeader: true, // auto hide header
   fixSiderbar: true, // sticky siderbar
   menu: {
     disableLocal: true,
   },
-  title: 'React Avant',
+  title: '',
+  // title: 'React Avant',
   pwa: true,
   // Your custom iconfont Symbol script Url
   // eg：//at.alicdn.com/t/font_1039637_btcrd5co4w.js

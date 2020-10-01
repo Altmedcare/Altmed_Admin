@@ -7,7 +7,7 @@ import GlobalFooter from '@/components/GlobalFooter';
 import DocumentTitle from 'react-document-title';
 import SelectLang from '@/components/SelectLang';
 import styles from './UserLayout.less';
-import logo from '../assets/logo.svg';
+import logo from '../assets/altmed-logo.svg';
 import getPageTitle from '@/utils/getPageTitle';
 
 const links = [
@@ -63,7 +63,7 @@ class UserLayout extends Component {
               <div className={styles.header}>
                 <Link to="/">
                   <img alt="logo" className={styles.logo} src={logo} />
-                  <span className={styles.title}>React Avant</span>
+                  <span className={styles.title}>AltMed</span>
                 </Link>
               </div>
             </div>

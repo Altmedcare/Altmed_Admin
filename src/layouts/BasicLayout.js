@@ -5,7 +5,7 @@ import { connect } from 'dva';
 import { ContainerQuery } from 'react-container-query';
 import classNames from 'classnames';
 import Media from 'react-media';
-import logo from '../assets/logo.svg';
+import logo from '../assets/altmed-liner.svg';
 import Footer from './Footer';
 import Header from './Header';
 import Context from './MenuContext';
@@ -115,14 +115,14 @@ class BasicLayout extends React.Component {
       <Layout>
         {isTop && !isMobile ? null : (
           <SiderMenu
-            logo={logo}
-            theme={navTheme}
-            onCollapse={this.handleMenuCollapse}
-            menuData={menuData}
-            isMobile={isMobile}
-            {...this.props}
+              logo={logo}
+              theme={navTheme}
+              onCollapse={this.handleMenuCollapse}
+              menuData={menuData}
+              isMobile={isMobile}
+              {...this.props}
           />
-        )}
+      )}
         <Layout
           style={{
             ...this.getLayoutStyle(),

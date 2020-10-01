@@ -156,8 +156,8 @@ class LoginPage extends Component {
 
           </Tab>
 
-  
-          <Link to="/">
+
+          <Link to="/dashboardlite">
             <Button type="primary" size='large' styles={{marginBottom: "30px"}} block>
               <FormattedMessage id="app.login.login" />
             </Button>
@@ -170,11 +170,11 @@ class LoginPage extends Component {
               <FormattedMessage id="app.login.forgot-password" />
             </a>
           </div>
-          
-  
+
+
           <Divider styles={{marginTop: "36px"}}><FormattedMessage id="app.login.sign-in-with" /></Divider>
           <div className={styles.other}>
-  
+
             <Avatar
               size={36}
               className={styles.icon}
@@ -190,13 +190,13 @@ class LoginPage extends Component {
               className={styles.icon}
               src="https://cdn.worldvectorlogo.com/logos/google-icon.svg"
             />
-       
+
           </div>
-          
+
           <Link style={{marginTop:24, display: "block", textAlign:"center"}} className={styles.register} to="/user/register">
-       
+
             Don't Have Account?
-           
+
           </Link>
         </Login>
       </div>

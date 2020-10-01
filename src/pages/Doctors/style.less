@@ -1,0 +1,148 @@
+@import '~antd/lib/style/themes/default.less';
+@import '~@/utils/utils.less';
+.card {
+  margin-bottom: 24px;
+}
+
+.heading {
+  margin: 0 0 16px 0;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.steps:global(.ant-steps) {
+  max-width: 750px;
+  margin: 16px auto;
+}
+
+.errorIcon {
+  margin-right: 24px;
+  color: @error-color;
+  cursor: pointer;
+  i {
+    margin-right: 4px;
+  }
+}
+
+.errorPopover {
+  :global {
+    .ant-popover-inner-content {
+      min-width: 256px;
+      max-height: 290px;
+      padding: 0;
+      overflow: auto;
+    }
+  }
+}
+
+.errorListItem {
+  padding: 8px 16px;
+  list-style: none;
+  border-bottom: 1px solid @border-color-split;
+  cursor: pointer;
+  transition: all 0.3s;
+  &:hover {
+    background: @primary-1;
+  }
+  &:last-child {
+    border: 0;
+  }
+  .errorIcon {
+    float: left;
+    margin-top: 4px;
+    margin-right: 12px;
+    padding-bottom: 22px;
+    color: @error-color;
+  }
+  .errorField {
+    margin-top: 2px;
+    color: @text-color-secondary;
+    font-size: 12px;
+  }
+}
+
+.editable {
+  td {
+    padding-top: 13px !important;
+    padding-bottom: 12.5px !important;
+  }
+}
+
+// custom footer for fixed footer toolbar
+.advancedForm + div {
+  padding-bottom: 64px;
+}
+
+.advancedForm {
+  :global {
+    .ant-form .ant-row:last-child .ant-form-item {
+      margin-bottom: 24px;
+    }
+    .ant-table td {
+      transition: none !important;
+    }
+  }
+}
+
+.optional {
+  color: @text-color-secondary;
+  font-style: normal;
+}
+
+
+.cardList {
+  margin-bottom: -24px;
+
+  .card {
+    :global {
+      .ant-card-meta-title {
+        margin-bottom: 12px;
+        & > a {
+          display: inline-block;
+          max-width: 100%;
+          color: @heading-color;
+        }
+      }
+      .ant-card-actions {
+        background: #f7f9fa;
+      }
+      .ant-card-body:hover {
+        .ant-card-meta-title > a {
+          color: @primary-color;
+        }
+      }
+    }
+  }
+  .item {
+    height: 64px;
+  }
+
+  :global {
+    .ant-list .ant-list-item-content-single {
+      max-width: 100%;
+    }
+  }
+}
+
+.extraImg {
+  width: 195px;
+  margin-top: -60px;
+  text-align: center;
+  position: relative;
+  top: 12px;
+  display: none;
+  i{
+    font-size: 7em;
+    text-align: center;
+    opacity: 0.8;
+    position: absolute;
+    top: -5px;
+    right: 0;
+    background: #1111111f;
+    border-radius: 50%;
+    padding: 10px;
+  }
+  img {
+    width: 100%;
+  }
+}

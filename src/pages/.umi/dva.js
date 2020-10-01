@@ -20,13 +20,13 @@ export function _onCreate() {
     app.use(plugin);
   });
   
-  app.model({ namespace: 'global', ...(require('C:/Users/User/Documents/Themeforest/UPLOAD/v.1.0.1/AVANT/src/models/global.js').default) });
-app.model({ namespace: 'list', ...(require('C:/Users/User/Documents/Themeforest/UPLOAD/v.1.0.1/AVANT/src/models/list.js').default) });
-app.model({ namespace: 'login', ...(require('C:/Users/User/Documents/Themeforest/UPLOAD/v.1.0.1/AVANT/src/models/login.js').default) });
-app.model({ namespace: 'menu', ...(require('C:/Users/User/Documents/Themeforest/UPLOAD/v.1.0.1/AVANT/src/models/menu.js').default) });
-app.model({ namespace: 'project', ...(require('C:/Users/User/Documents/Themeforest/UPLOAD/v.1.0.1/AVANT/src/models/project.js').default) });
-app.model({ namespace: 'setting', ...(require('C:/Users/User/Documents/Themeforest/UPLOAD/v.1.0.1/AVANT/src/models/setting.js').default) });
-app.model({ namespace: 'user', ...(require('C:/Users/User/Documents/Themeforest/UPLOAD/v.1.0.1/AVANT/src/models/user.js').default) });
+  app.model({ namespace: 'global', ...(require('E:/Altmed_Admin/src/models/global.js').default) });
+app.model({ namespace: 'list', ...(require('E:/Altmed_Admin/src/models/list.js').default) });
+app.model({ namespace: 'login', ...(require('E:/Altmed_Admin/src/models/login.js').default) });
+app.model({ namespace: 'menu', ...(require('E:/Altmed_Admin/src/models/menu.js').default) });
+app.model({ namespace: 'project', ...(require('E:/Altmed_Admin/src/models/project.js').default) });
+app.model({ namespace: 'setting', ...(require('E:/Altmed_Admin/src/models/setting.js').default) });
+app.model({ namespace: 'user', ...(require('E:/Altmed_Admin/src/models/user.js').default) });
   return app;
 }
 
