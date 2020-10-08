@@ -51,8 +51,13 @@
   ],
   "dependencies": {
     "@antv/data-set": "^0.10.1",
+    "@aws-amplify/ui-react": "^0.2.23",
     "@livechat/ui-kit": "^0.4.0-2",
     "antd": "^3.13.0",
+    "aws-amplify": "^3.3.3",
+    "aws-cognito-react": "^1.6.3",
+    "aws-sdk": "^2.766.0",
+    "axios": "^0.20.0",
     "bizcharts": "^3.4.3",
     "bizcharts-plugin-slider": "^2.1.1-beta.1",
     "classnames": "^2.2.6",

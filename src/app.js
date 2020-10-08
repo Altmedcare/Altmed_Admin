@@ -1,5 +1,9 @@
 import fetch from 'dva/fetch';
 import WebFont from 'webfontloader';
+import {ConfigureAmplify} from "@/services/configureAmplify";
+
+ConfigureAmplify();
+
 
 WebFont.load({
   google: {
@@ -13,6 +17,7 @@ export const dva = {
     },
   },
 };
+
 
 let authRoutes = {};
 

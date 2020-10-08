@@ -13,6 +13,8 @@ import PageLoading from '../PageLoading';
 import { getDefaultCollapsedSubMenus } from './SiderMenuUtils';
 import { title } from '../../defaultSettings';
 import AvantBg from '../../assets/stylish-hexagonal-line-abstract-backgroun.jpg';
+import router from "umi/router";
+import {AUTH_USER_TOKEN_KEY} from "@/utils/constants";
 
 
 const BaseMenu = React.lazy(() => import('./BaseMenu'));
@@ -73,6 +75,11 @@ export default class SiderMenu extends PureComponent {
       visible: false,
     });
   };
+  logout=()=>{
+    router.push('/user/login');
+    localStorage.removeItem(AUTH_USER_TOKEN_KEY)
+
+  }
 
   render() {
     const { logo, onMenuClick, collapsed, onCollapse, fixSiderbar, theme, isMobile, primaryColor } = this.props;
@@ -145,7 +152,7 @@ export default class SiderMenu extends PureComponent {
             </Tooltip></li>
             <li>
               <Tooltip placement="top" title="logout">
-              <a href="/user/login" rel="noopener noreferrer" className={styles.action}>
+              <a href="#" rel="noopener noreferrer" className={styles.action} onClick={this.logout}>
                 <Icon type="logout" />
               </a>
             </Tooltip></li>
