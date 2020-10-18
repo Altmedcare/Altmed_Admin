@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {connect} from "dva";
-import {Avatar, Divider, Button} from "antd";
+import {Avatar, Divider, Button, Col} from "antd";
 import {formatMessage, FormattedMessage} from "umi-plugin-react/locale";
 import Link from "umi/link";
 import {Checkbox, Alert, Icon, Input} from "antd";
@@ -11,6 +11,7 @@ import {useHistory} from "react-router-dom";
 import {AUTH_USER_TOKEN_KEY} from "@/utils/constants";
 import {handler} from '../../services/adminHandler';
 import AWS from "aws-sdk";
+
 
 
 const {Tab, UserName, Password, Mobile, Captcha, Submit} = Login;
@@ -41,15 +42,6 @@ class LoginPage extends Component {
         this.setState({type});
     };
 
-    componentDidMount() {
-        Auth.currentAuthenticatedUser()
-            .then(response => {
-
-            })
-            .catch(error => {
-                console.log(error, 'oooooooo');
-            });
-    }
 
     onGetCaptcha = () =>
         new Promise((resolve, reject) => {
@@ -98,20 +90,13 @@ class LoginPage extends Component {
         let username = '+91' + this.state.mobile;
         if (this.state.mobile.length >= 10) {
             try {
-
                 const AWSConfig = {
-                    accessKeyId: 'AKIATUPTMLPP37TGUMEZ',
-                    secretAccessKey: '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',
-                    region: 'ap-south-1',
-                    sessionToken: null,
-                    userPoolId: "ap-south-1_p7Jz6LG3T",//YOUR UserPoolID
+
                 }
-                AWS.config.correctClockSkew = true;
                 AWS.config.update(AWSConfig);
                 const cognitoidentityserviceprovider = new AWS.CognitoIdentityServiceProvider({apiVersion: '2016-04-18'});
                 const result = await cognitoidentityserviceprovider.listUsersInGroup({
-                    "GroupName": "admin",
-                    "UserPoolId": "ap-south-1_p7Jz6LG3T"
+
                 }, (e, data) => {
 
                     let phoneList = [];
@@ -126,6 +111,8 @@ class LoginPage extends Component {
                     if (phoneList.some(item => username === item)) {
                         Auth.signIn(username)
                             .then(cognitoUser => {
+                                console.log('phoneList',cognitoUser)
+
                                 this.setState({
                                     isotp: true,
                                     user: cognitoUser
@@ -182,6 +169,8 @@ class LoginPage extends Component {
         const {type, autoLogin} = this.state;
         return (
             <div className={styles.main}>
+                ----- {process.env.REACT_APP_SECRET_NAME} -----------
+
                 <Login
                     defaultActiveKey={type}
                     onTabChange={this.onTabChange}

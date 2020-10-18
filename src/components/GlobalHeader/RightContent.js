@@ -143,22 +143,22 @@ export default class GlobalHeaderRight extends PureComponent {
             size="large"
           />
         </Modal>
-        <Tooltip title="ECommerce">
-          <a rel="noopener noreferrer" className={styles.action}>
-            <Badge style={{backgroundColor:"#36b37e"}} count={57}>
-              <Avatar
-                onClick={() => openNotificationWithIcon("success")}
-                style={{
-                  background: "rgb(235, 238, 243, 0.5)",
-                  color: "#7887a9"
-                }}
-                icon="shopping"
-              />
-            </Badge>
-          </a>
-        </Tooltip>
+        {/*<Tooltip title="ECommerce">*/}
+        {/*  <a rel="noopener noreferrer" className={styles.action}>*/}
+        {/*    <Badge style={{backgroundColor:"#36b37e"}} count={57}>*/}
+        {/*      <Avatar*/}
+        {/*        onClick={() => openNotificationWithIcon("success")}*/}
+        {/*        style={{*/}
+        {/*          background: "rgb(235, 238, 243, 0.5)",*/}
+        {/*          color: "#7887a9"*/}
+        {/*        }}*/}
+        {/*        icon="shopping"*/}
+        {/*      />*/}
+        {/*    </Badge>*/}
+        {/*  </a>*/}
+        {/*</Tooltip>*/}
 
-        <SelectLang className={styles.action} />
+        {/*<SelectLang className={styles.action} />*/}
       </div>
     );
   }

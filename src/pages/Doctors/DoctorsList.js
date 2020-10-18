@@ -5,6 +5,7 @@ import DoctorView from "@/pages/Doctors/DoctorView";
 import Link from 'umi/link';
 import AWS from "aws-sdk";
 import {AUTH_USER_TOKEN_KEY} from "@/utils/constants";
+import {Auth} from "@aws-amplify/auth";
 
 
 class DoctorsList extends PureComponent {
@@ -14,7 +15,8 @@ class DoctorsList extends PureComponent {
         this.state = {
             doctors: [],
             loading: true,
-            doctorView: true
+            doctorView: true,
+            phoneList:['222'],
         }
     }
 
@@ -49,19 +51,14 @@ class DoctorsList extends PureComponent {
 
 
         const AWSConfig = {
-            accessKeyId: 'AKIATUPTMLPP37TGUMEZ',
-            secretAccessKey: 'DRbjr5H35X/0HGJ1ZQ+FTQgOwJzhZThOy1SDTImw',
-            region: 'ap-south-1',
-            sessionToken: null,
-            userPoolId: "ap-south-1_p7Jz6LG3T",//YOUR UserPoolID
-            username: key,
+
         }
         AWS.config.correctClockSkew = true;
         AWS.config.update(AWSConfig);
         const cognitoidentityserviceprovider = new AWS.CognitoIdentityServiceProvider({apiVersion: '2016-04-18'});
         cognitoidentityserviceprovider.adminUpdateUserAttributes({
 
-            UserPoolId: "ap-south-1_p7Jz6LG3T",//YOUR UserPoolID
+
             Username: key,//username
             UserAttributes: [
 
@@ -84,15 +81,39 @@ class DoctorsList extends PureComponent {
                 pathname: '/user/login'
             })
         }
-        performRequest('get', '/api/doctors')
-            .then(response => {
-                console.log(response.data.data, 'asasd')
-                this.setState({
-                    doctors: response.data.data,
-                    loading: false
-                })
+        const AWSConfig = {
 
-            });
+        }
+        AWS.config.correctClockSkew = true;
+        AWS.config.update(AWSConfig);
+        const cognitoidentityserviceprovider = new AWS.CognitoIdentityServiceProvider({apiVersion: '2016-04-18'});
+        const result = cognitoidentityserviceprovider.listUsersInGroup({
+            "GroupName": "admin",
+
+        }, (e, data) => {
+
+            let phoneList = [];
+
+            data.Users.map(function (each) {
+                each.Attributes.map(function (e) {
+                    if (e.Name == "phone_number") {
+                        phoneList.push(e.Value)
+                    }
+                })
+            })
+            this.setState({phoneList:phoneList});
+            performRequest('get', '/api/doctors')
+                .then(response => {
+                    console.log(response.data.data, 'asasd')
+                    this.setState({
+                        doctors: response.data.data,
+                        loading: false
+                    })
+
+                });
+
+        })
+
     }
 
     editDoctor = () => {
@@ -165,7 +186,7 @@ class DoctorsList extends PureComponent {
         ];
 
         let data = [];
-        this.state.doctors.map(function (e) {
+        this.state.doctors.map((e)=> {
 
             if (e.Attributes.length) {
                 console.log(e.Attributes)
@@ -174,7 +195,7 @@ class DoctorsList extends PureComponent {
                 var phone = '';
                 var email = '';
                 var status = '';
-                e.Attributes.map(function (each) {
+                e.Attributes.map((each)=> {
                     if (each.Name === "custom:full_name") {
                         name = each.Value;
 
@@ -191,14 +212,16 @@ class DoctorsList extends PureComponent {
 
                 })
 
+                if (!this.state.phoneList.some(item => phone === item)) {
+                    data.push({
+                        key: username,
+                        name: name,
+                        age: phone,
+                        address: email,
+                        tags: status
+                    })
+                }
 
-                data.push({
-                    key: username,
-                    name: name,
-                    age: phone,
-                    address: email,
-                    tags: status
-                })
             }
             // e.attribute[8].full_name
         })

@@ -1,18 +1,18 @@
 self.__precacheManifest = [
   {
-    "revision": "72a7cd7347c76949c5a3",
+    "revision": "e496544f8a0797de6d2e",
     "url": "/vendors.chunk.css"
   },
   {
-    "revision": "72a7cd7347c76949c5a3",
+    "revision": "e496544f8a0797de6d2e",
     "url": "/vendors.async.js"
   },
   {
-    "revision": "fd2fa98cc9cab43e3a1a",
+    "revision": "ff039723a15b6f4b01f0",
     "url": "/layouts__BasicLayout.chunk.css"
   },
   {
-    "revision": "fd2fa98cc9cab43e3a1a",
+    "revision": "ff039723a15b6f4b01f0",
     "url": "/layouts__BasicLayout.async.js"
   },
   {
@@ -36,7 +36,7 @@ self.__precacheManifest = [
     "url": "/p__DashboardLite__DashboardLite.async.js"
   },
   {
-    "revision": "931ebd7a54c23e178255",
+    "revision": "198b79789ef2b8564fcc",
     "url": "/p__Doctors__DoctorsList.async.js"
   },
   {
@@ -116,6 +116,10 @@ self.__precacheManifest = [
     "url": "/favicon.png"
   },
   {
+    "revision": "7db0da6a572c4d946d955e42d8268844",
+    "url": "/ggeditor\\flow\\normal.svg"
+  },
+  {
     "revision": "7e8663d516fab38eff38b94b08da5d76",
     "url": "/ggeditor\\flow\\model.svg"
   },
@@ -128,10 +132,6 @@ self.__precacheManifest = [
     "url": "/ggeditor\\koni\\icon.svg"
   },
   {
-    "revision": "7db0da6a572c4d946d955e42d8268844",
-    "url": "/ggeditor\\flow\\normal.svg"
-  },
-  {
     "revision": "7f01fcd6d877eebd0ead00087b0cd9f9",
     "url": "/icons\\icon-128x128.png"
   },
@@ -140,12 +140,12 @@ self.__precacheManifest = [
     "url": "/ggeditor\\koni\\bank.svg"
   },
   {
-    "revision": "0036cca03a82d851933f5e4b5789caaa",
-    "url": "/ggeditor\\koni\\person.svg"
-  },
-  {
     "revision": "f161daaf3b30acfccfae4f38099c2161",
     "url": "/ggeditor\\koni\\country.svg"
+  },
+  {
+    "revision": "0036cca03a82d851933f5e4b5789caaa",
+    "url": "/ggeditor\\koni\\person.svg"
   },
   {
     "revision": "85218bcb1314c7fbabeea192d1aa2f59",

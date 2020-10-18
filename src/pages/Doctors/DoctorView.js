@@ -36,6 +36,25 @@ const FormItem = Form.Item;
 const {Option} = Select;
 const {RangePicker} = DatePicker;
 const {TextArea} = Input;
+const props = {
+    onRemove: file => {
+        this.setState(state => {
+            const index = state.fileList.indexOf(file);
+            const newFileList = state.fileList.slice();
+            newFileList.splice(index, 1);
+            return {
+                fileList: newFileList
+            };
+        });
+    },
+    beforeUpload: file => {
+        this.setState(state => ({
+            fileList: [...state.fileList, file]
+        }));
+        return false;
+    },
+
+};
 
 @connect(({loading}) => ({
     submitting: loading.effects['form/submitRegularForm'],
@@ -199,8 +218,9 @@ class DoctorView extends Component {
                 data.data.upload.map(function (each) {
                     each.key = each.uuid
                 })
-
-
+                let mmt = moment(dob).format('M/DD/YYYY');
+                console.log(data.data.registration, 'data.data.registration')
+                let date_on = moment(data.data.registration.length ? data.data.registration[0].dated_on : '').format('M/DD/YYYY');
                 this.setState({
                     careerData: data.data.career,
                     specializationData: data.data.specialization,
@@ -210,16 +230,16 @@ class DoctorView extends Component {
 
                     name: name,
                     email: email,
-                    dob: dob,
+                    dob: mmt === 'Invalid date' ? '01/01/1990' : mmt,
                     blood: blood,
                     address: address,
                     experience: experience,
                     specialized: specialized,
                     phone: phone,
-                    registration: data.data.registration[0].registration,
-                    reg_name: data.data.registration[0].name,
-                    dated_on: data.data.registration[0].dated_on,
-                    reg_uid: data.data.registration[0].uuid,
+                    registration: data.data.registration.length ? data.data.registration[0].registration : '',
+                    reg_name: data.data.registration.length ? data.data.registration[0].name : '',
+                    dated_on: date_on === 'Invalid date' ? '01/01/1990' : date_on,
+                    reg_uid: data.data.registration.length ? data.data.registration[0].uuid : '',
 
                     loading: false,
                     loader: false
@@ -949,12 +969,7 @@ class DoctorView extends Component {
             loader: true
         })
         const AWSConfig = {
-            accessKeyId: 'AKIATUPTMLPP37TGUMEZ',
-            secretAccessKey: 'DRbjr5H35X/0HGJ1ZQ+FTQgOwJzhZThOy1SDTImw',
-            region: 'ap-south-1',
-            sessionToken: null,
-            userPoolId: "ap-south-1_p7Jz6LG3T",//YOUR UserPoolID
-            username: id,
+
         }
         AWS.config.correctClockSkew = true;
         AWS.config.update(AWSConfig);
@@ -962,7 +977,7 @@ class DoctorView extends Component {
 
         cognitoidentityserviceprovider.adminUpdateUserAttributes({
 
-            UserPoolId: "ap-south-1_p7Jz6LG3T",//YOUR UserPoolID
+
             Username: id,//username
             UserAttributes: [
 
@@ -1294,6 +1309,7 @@ class DoctorView extends Component {
                 },
             },
         ];
+
         const uploadsColumns = [
             {
                 title: 'File',
@@ -1303,13 +1319,18 @@ class DoctorView extends Component {
                 render: (text, record) => {
                     if (record.editable) {
                         return (
-                            <Input
-                                value={text}
-                                autoFocus
-                                onChange={e => this.handleUploadChange(e, 'file', record.key)}
-
-                                placeholder="Name"
-                            />
+                            <Upload>
+                                <Button>
+                                    <Icon type="upload"/> Click to Upload
+                                </Button>
+                            </Upload>
+                            // <Input
+                            //     value={text}
+                            //     autoFocus
+                            //     onChange={e => this.handleUploadChange(e, 'file', record.key)}
+                            //
+                            //     placeholder="Name"
+                            // />
                         );
                     }
                     return text;
@@ -1895,7 +1916,7 @@ class DoctorView extends Component {
                             </FormItem>
                         </Col>
                         <Col xl={12} lg={12} md={12} sm={24} xs={24} order={12}>
-                            <FormItem {...formItemLayout} label={<FormattedMessage id="Specialized Experience"/>}>
+                            <FormItem {...formItemLayout} label={<FormattedMessage id="Specialized "/>}>
                                 {getFieldDecorator('specialized', {
                                     initialValue: this.state.specialized,
                                     rules: [
@@ -2060,9 +2081,9 @@ class DoctorView extends Component {
                                 >
                                     <FormattedMessage id="form.submit"/>
                                 </Button>
-                                <Button style={{marginLeft: 8}}>
-                                    <FormattedMessage id="form.save"/>
-                                </Button>
+                                {/*<Button style={{marginLeft: 8}}>*/}
+                                {/*    <FormattedMessage id="form.save"/>*/}
+                                {/*</Button>*/}
                             </FormItem>
                         </Col>
 
